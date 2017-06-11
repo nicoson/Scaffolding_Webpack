@@ -1,3 +1,5 @@
+var webpack = require('webpack');
+
 module.exports = {
 	/***********************\
 	|	config source map
@@ -28,12 +30,29 @@ module.exports = {
 				test: /\.js$/,
 				exclude: /node_modules/,
 				loader: 'babel-loader',//在webpack的module部分的loaders里进行配置即可
-				query: {
-					presets: ['es2015','react']
-				}
-			}
+				//	detail configuration will be move to a separet file .babelrc
+				// query: {
+				// 	presets: ['es2015','react']
+				// }
+			},
+			{
+	            test: /\.less$/,
+	            use: [{
+	                loader: "style-loader" // creates style nodes from JS strings
+	            }, {
+	                loader: "css-loader" // translates CSS into CommonJS
+	            }, {
+	                loader: "less-loader" // compiles Less to CSS
+	            }]
+	        }
 		]
 	},
+
+
+
+	plugins: [
+		new webpack.BannerPlugin("Copyright By Xiaohui Ni.")//在这个数组中new一个就可以了
+	],
 
 
 	/********************\
