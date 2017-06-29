@@ -4,16 +4,16 @@ module.exports = {
 	/***********************\
 	|	config source map
 	\***********************/
-	devtool: 'eval-source-map',//配置生成Source Maps，选择合适的选项
+	devtool: 'eval-source-map',	//配置生成Source Maps，选择合适的选项
 
 
 	/************************************\
 	|	config entrance and output dir
 	\************************************/
-	entry: __dirname + "/app/main.js",//已多次提及的唯一入口文件
+	entry: __dirname + "/app/main.js",	//已多次提及的唯一入口文件
 	output: {
-		path: __dirname + "/public",//打包后的文件存放的地方
-		filename: "bundle.js"//打包后输出文件的文件名
+		path: __dirname + "/public",	//打包后的文件存放的地方
+		filename: "bundle.js"	//打包后输出文件的文件名
 	},
 
 
@@ -29,7 +29,7 @@ module.exports = {
 			{
 				test: /\.js$/,
 				exclude: /node_modules/,
-				loader: 'babel-loader',//在webpack的module部分的loaders里进行配置即可
+				loader: 'babel-loader',	//在webpack的module部分的loaders里进行配置即可
 				//	detail configuration will be move to a separet file .babelrc
 				// query: {
 				// 	presets: ['es2015','react']
@@ -59,9 +59,9 @@ module.exports = {
 	|	config server
 	\********************/
 	devServer: {
-		contentBase: "./public",//本地服务器所加载的页面所在的目录
-		//color: true,//终端中输出结果为彩色
-		historyApiFallback: true,//不跳转
-		inline: true//实时刷新
+		contentBase: "./public",	//本地服务器所加载的页面所在的目录
+		//color: true,	//终端中输出结果为彩色
+		historyApiFallback: true,	//不跳转
+		inline: true	//实时刷新
 	} 
 }
